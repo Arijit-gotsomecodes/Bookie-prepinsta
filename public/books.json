@@ -1,0 +1,80 @@
+[
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Fiction",
+      "description": "A novel about the serious issues of rape and racial inequality.",
+      "coverUrl": "https://www.bhmpics.com/downloads/To-Kill-a-Mockingbird-Wallpaper-(30-+-Background-Pictures)/11.to-kill-a-mockingbird.jpg"
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "genre": "Dystopian",
+      "description": "A story of a dystopian future under totalitarian rule.",
+      "coverUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScdrS01PJMALAHNA7NZ6LbPiOEablYWwy_2w&s"
+    },
+    {
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "genre": "Adventure",
+      "description": "The narrative of Captain Ahab’s obsessive quest to seek revenge on Moby Dick.",
+      "coverUrl": "https://images.cwtv.com/images/masters/cw/universal/shows/moby-dick-2011/show-promo.jpg"
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "genre": "Romance",
+      "description": "A romantic novel that critiques the British landed gentry at the end of the 18th century.",
+      "coverUrl": "https://s2982.pcdn.co/wp-content/uploads/2013/07/Pride-and-Prejudice-Parks-and-Recreation-1.jpg.optimal.jpg"
+    },
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Classic",
+      "description": "A story of the Jazz Age and a critique of the American Dream.",
+      "coverUrl": "https://i.pinimg.com/736x/b7/a6/76/b7a6762ddac30824ba40e7ddf2b91859.jpg"
+    },
+    {
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "genre": "Historical Fiction",
+      "description": "A novel that chronicles the history of the French invasion of Russia.",
+      "coverUrl": "https://m.media-amazon.com/images/I/61REVzhM5NL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "genre": "Literary Fiction",
+      "description": "A story about teenage angst and alienation.",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/The_Catcher_in_the_Rye_%281951%2C_first_edition_dust_jacket%29.jpg"
+    },
+    {
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "genre": "Science Fiction",
+      "description": "A novel that explores a technologically advanced society and its consequences.",
+      "coverUrl": "https://images7.alphacoders.com/435/thumb-1920-435325.jpg"
+    },
+    {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "description": "A prelude to the Lord of the Rings series, following Bilbo Baggins on his adventure.",
+      "coverUrl": "https://c.wallhere.com/photos/b5/75/The_Hobbit_The_Hobbit_The_Battle_of_the_Five_Armies_The_Hobbit_The_Desolation_of_Smaug_The_Hobbit_An_Unexpected_Journey_Middle_earth_J_R_R_Tolkien_Bilbo_Baggins_Gandalf-18827.jpg!d"
+    },
+    {
+      "title": "Crime and Punishment",
+      "author": "Fyodor Dostoevsky",
+      "genre": "Psychological Fiction",
+      "description": "A novel exploring the moral dilemmas of a young man who commits a murder.",
+      "coverUrl": "https://m.media-amazon.com/images/I/71C36bHG4pL._AC_UF350,350_QL80_.jpg"
+    },
+    {
+      "title": "The Da Vinci Code",
+      "author": "Dan Brown",
+      "genre": "Mystery",
+      "description": "A thriller involving a murder in the Louvre and a conspiracy theory.",
+      "coverUrl": "https://wallpaperaccess.com/full/4242434.jpg"
+    }
+  ]
+  
