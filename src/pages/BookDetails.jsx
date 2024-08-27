@@ -34,7 +34,8 @@ function BookDetails() {
         <div className="md:w-1/2 md:pl-6">
           <h2 className="text-3xl font-bold mb-4">{book.title}</h2>
           <p className="text-lg mb-2"><strong>Author:</strong> {book.author}</p>
-          <p className="text-lg mb-2"><strong>Genre:</strong> {book.genre}</p>
+          <p className="text-lg mb-2 pb-5"><strong>Genre:</strong> {book.genre}</p>
+          <p className="text-lg mb-2"><strong>About the book:</strong></p>
           <p className="text-lg mt-4">{book.description}</p>
           <button 
             onClick={handleDelete} 

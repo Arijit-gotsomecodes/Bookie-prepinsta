@@ -1,30 +1,67 @@
 import React, { useState, useEffect } from 'react';
 import BookCard from '../components/BookCard';
-import { Link } from 'react-router-dom';
-import { MagnifyingGlassIcon, PlusIcon } from '@heroicons/react/24/outline'; // Import icons
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'; // Import icons
 import MainLayout from '../layouts/MainLayout'; // Import layout
+import Slider from 'react-slick';
 
 function Home() {
   const [books, setBooks] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [carouselBooks, setCarouselBooks] = useState([]);
 
   useEffect(() => {
     const storedBooks = JSON.parse(localStorage.getItem('books')) || [];
     setBooks(storedBooks);
   }, []);
 
-  const filteredBooks = books.filter(book =>
-    book.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  useEffect(() => {
+    const filteredBooks = books.filter(book =>
+      book.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    
+    // Function to get 5 random books
+    const getRandomBooks = (bookList) => {
+      if (bookList.length <= 5) return bookList;
+      const shuffled = bookList.sort(() => 0.5 - Math.random());
+      return shuffled.slice(0, 5);
+    };
+
+    setCarouselBooks(getRandomBooks(filteredBooks));
+  }, [books, searchQuery]);
+
+  const carouselSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3200, // Change this value to adjust the speed to 3.5 seconds
+  };
 
   return (
     <MainLayout>
-      <header className="flex flex-col md:flex-row md:justify-between items-center mb-12 p-6 bg-gray-100">
+      <header className="flex flex-col md:flex-row md:justify-between items-center mb-6 p-6 bg-gray-100">
         <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight mb-6 md:mb-0 mx-3">
           Explore Your Library
         </h1>
-        
       </header>
+      <div className="mb-12 relative p-4">
+        <Slider {...carouselSettings}>
+          {carouselBooks.map((book, index) => (
+            <div key={index} className="relative">
+              <img
+                src={book.coverUrl}
+                alt={book.title}
+                className="w-full h-80 object-cover rounded-lg"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black opacity-85 p-2 z-20 h-30">
+                <h2 className="text-white text-xl font-semibold">{book.title}</h2>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
       <div className="flex justify-center mb-12">
         <div className="relative w-full max-w-md">
           <input
@@ -38,10 +75,10 @@ function Home() {
         </div>
       </div>
       <main>
-        {filteredBooks.length > 0 ? (
+        {books.length > 0 ? (
           <div className="px-4 md:px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-              {filteredBooks.map((book, index) => (
+              {books.filter(book => book.title.toLowerCase().includes(searchQuery.toLowerCase())).map((book, index) => (
                 <BookCard key={index} book={book} index={index} />
               ))}
             </div>
