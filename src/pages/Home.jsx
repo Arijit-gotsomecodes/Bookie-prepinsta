@@ -36,34 +36,20 @@ function Home() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3200, // Change this value to adjust the speed to 3.5 seconds
+    autoplaySpeed: 3200, // Change this value to adjust the speed to 3.2 seconds
   };
+
+  const filteredBooks = books.filter(book =>
+    book.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <MainLayout>
-      <header className="flex flex-col md:flex-row md:justify-between items-center mb-6 p-6 bg-gray-100">
-        <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight mb-6 md:mb-0 mx-3">
+      <header className="flex flex-col md:flex-row md:justify-between items-center mb-8 p-6 bg-gray-100 shadow-md">
+        <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight mb-4 md:mb-0 mx-3">
           Explore Your Library
         </h1>
-      </header>
-      <div className="mb-12 relative p-4">
-        <Slider {...carouselSettings}>
-          {carouselBooks.map((book, index) => (
-            <div key={index} className="relative">
-              <img
-                src={book.coverUrl}
-                alt={book.title}
-                className="w-full h-80 object-cover rounded-lg"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black opacity-85 p-2 z-20 h-30">
-                <h2 className="text-white text-xl font-semibold">{book.title}</h2>
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-      <div className="flex justify-center mb-12">
-        <div className="relative w-full max-w-md">
+        <div className="relative w-full max-w-md md:ml-6">
           <input
             type="text"
             placeholder="Search books by title..."
@@ -73,16 +59,37 @@ function Home() {
           />
           <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-500" />
         </div>
-      </div>
-      <main>
-        {books.length > 0 ? (
-          <div className="px-4 md:px-6 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-              {books.filter(book => book.title.toLowerCase().includes(searchQuery.toLowerCase())).map((book, index) => (
+      </header>
+
+      {!searchQuery && (
+        <div className="mb-12 relative p-4 md:p-6 lg:p-8">
+          <Slider {...carouselSettings}>
+            {carouselBooks.map((book, index) => (
+              <div key={index} className="relative rounded-lg overflow-hidden">
+                <img
+                  src={book.coverUrl}
+                  alt={book.title}
+                  className="w-full h-64 md:h-80 object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black opacity-75 p-4">
+                  <h2 className="text-white text-lg md:text-xl font-semibold">{book.title}</h2>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      )}
+
+      <main className="px-4 md:px-6 lg:px-8">
+        {filteredBooks.length > 0 ? (
+          <>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">My Books</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {filteredBooks.map((book, index) => (
                 <BookCard key={index} book={book} index={index} />
               ))}
             </div>
-          </div>
+          </>
         ) : (
           <div className="text-center text-gray-700 text-lg mt-20">
             No books found. Start by adding new titles to your collection.
