@@ -7,7 +7,7 @@ function Footer() {
         <p>&copy; BookInsta - Book Database.</p>
         <div className="flex items-center gap-4">
           <p>Made by Arijit with 💖</p>
-          <a href="https://github.com/Arijit-gotsomecodes" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Arijit-gotsomecodes/Bookie-prepinsta" target="_blank" rel="noopener noreferrer">
             <img
               src="pngwing.com.png" // Placeholder image link
               alt="GitHub"
